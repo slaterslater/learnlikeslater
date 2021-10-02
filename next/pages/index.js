@@ -4,6 +4,13 @@ import styles from '../styles/Home.module.css'
 import { client } from '../lib/client';
 
 export default function Home({ books }) {
+
+  const handleClick = async e => {
+    const res = await fetch(`/api/book/${e.target.dataset.slug}`)
+    const text = await res.text()
+    console.log(text)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,9 +30,12 @@ export default function Home({ books }) {
 
         <div className={styles.grid}>
         {books.map(book => (
-          <p key={book.id}>{book.name}</p>
+          <p key={book.id}>{book.name} <button type='button' data-slug={book.slug} onClick={handleClick}>GO</button></p>
         ))}  
         </div>
+
+        
+
       </main>
 
       <footer className={styles.footer}>
@@ -43,6 +53,7 @@ export async function getStaticProps() {
         books {
           id
           name
+          slug
         }
       }
     `
