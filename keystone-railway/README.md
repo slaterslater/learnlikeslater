@@ -9,38 +9,26 @@ Ensure you have the following tools installed:
 
 If you're on MacOS and use [Homebrew](https://brew.sh), you can install all these at once:
 
+## Create Railway App
+
+* Go to [Railway](https://railway.app/) and create a new app.
+* Add the PostgresSQL plugin
+* Add a Variable named **PORT** and set its value to **${{ PGPORT }}**
+* go to the **setup** tab and copy the Railway project ID
+
 ```sh
 # Install the prerequisite tools
 brew install git node yarn railwayapp/railway/railway
-```
 
-If you're on a different platform, click though the links above and follow the relevant instructions.
-
-## Local Development
-
-Install the node modules:
-
-```sh
+# Install the node modules:
 yarn
-```
 
-Link to Railway
-
-```sh
-# This will open a browser window to authenticate you
+# Open a browser window to authenticate you
 railway login
 
 # Replace "my-keystone6-railway-app" with your Railway project ID
 railway link my-keystone6-railway-app
-```
 
-## Start The App
-
-Make sure to [start your PostgreSQL server](https://tableplus.com/blog/2018/10/how-to-start-stop-restart-postgresql-server.html)
-
-```sh
-# Starts a PostgreSQL server on macOS
-pg_ctl -D /usr/local/var/postgres start
 # Runs your local code (in dev mode) against a Railway-hosted database
 railway run yarn dev
 ```
