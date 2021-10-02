@@ -1,0 +1,24 @@
+{
+  "name": "learnlikeslater-keystone-railway",
+  "version": "1.0.0",
+  "description": "Keystone 6 using postgresSQL deployed to Railway",
+  "main": "keystone.ts",
+  "repository": "git@github.com:slaterslater/learnlikeslater.git",
+  "author": "slaterslater",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">= 14.13"
+  },
+  "scripts": {
+    "dev": "keystone-next dev",
+    "start": "keystone-next start",
+    "build": "keystone-next build && keystone-next prisma migrate deploy"
+  },
+  "dependencies": {
+    "@keystone-next/auth": "^31.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
