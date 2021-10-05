@@ -151,6 +151,8 @@ type User {
   name: String
   email: String
   password: PasswordState
+  card: String
+  pin: String
 }
 
 type PasswordState {
@@ -165,6 +167,8 @@ input UserWhereInput {
   name: StringNullableFilter
   email: StringNullableFilter
   password: PasswordFilter
+  card: StringNullableFilter
+  pin: StringNullableFilter
 }
 
 input PasswordFilter {
@@ -174,18 +178,23 @@ input PasswordFilter {
 input UserWhereUniqueInput {
   id: ID
   email: String
+  card: String
 }
 
 input UserOrderByInput {
   id: OrderDirection
   name: OrderDirection
   email: OrderDirection
+  card: OrderDirection
+  pin: OrderDirection
 }
 
 input UserUpdateInput {
   name: String
   email: String
   password: String
+  card: String
+  pin: String
 }
 
 input UserUpdateArgs {
@@ -197,6 +206,8 @@ input UserCreateInput {
   name: String
   email: String
   password: String
+  card: String
+  pin: String
 }
 
 """

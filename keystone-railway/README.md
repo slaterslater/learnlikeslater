@@ -32,3 +32,9 @@ railway link my-keystone6-railway-app
 # Runs your local code (in dev mode) against a Railway-hosted database
 railway run yarn dev
 ```
+
+## Deploy
+
+```sh
+railway up
+```
