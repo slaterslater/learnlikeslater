@@ -54,7 +54,6 @@ enum PasswordAuthErrorCode {
 type Book {
   id: ID!
   name: String
-  isbn: String
   slug: String
 }
 
@@ -64,7 +63,6 @@ input BookWhereInput {
   NOT: [BookWhereInput!]
   id: IDFilter
   name: StringNullableFilter
-  isbn: StringNullableFilter
   slug: StringNullableFilter
 }
 
@@ -120,7 +118,6 @@ input BookWhereUniqueInput {
 input BookOrderByInput {
   id: OrderDirection
   name: OrderDirection
-  isbn: OrderDirection
   slug: OrderDirection
 }
 
@@ -131,7 +128,6 @@ enum OrderDirection {
 
 input BookUpdateInput {
   name: String
-  isbn: String
   slug: String
 }
 
@@ -142,7 +138,6 @@ input BookUpdateArgs {
 
 input BookCreateInput {
   name: String
-  isbn: String
   slug: String
 }
 

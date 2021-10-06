@@ -11,7 +11,6 @@ export const lists = createSchema({
   Book: list({
     fields: {
       name: text({ isRequired: true }),
-      isbn: text({ isRequired: true }),
       slug: text({ isRequired: true }),
     },
   }),
