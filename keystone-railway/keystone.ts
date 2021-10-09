@@ -27,7 +27,14 @@ export default withAuth(
       useMigrations: true,
       url: DATABASE_URL,
     },
-    server: { port: PORT },
+    server: {
+      cors: {
+        // maybe should be an array rather than ||
+        origin: process.env.FRONT_END_DOMAIN || 'http://localhost:3000',
+        credentials: true
+      },
+      port: PORT
+    },
     lists,
     session,
   })
